@@ -7,7 +7,7 @@ const weatherApp = require("./weatherApp")
 const notesApp = require("./framework")
 // Firing Express
 const app = express()
-
+const port = process.env.PORT || 3000
 // Folders Pathes
 var publicFolder = path.join(__dirname, "../public")
 var viewsFolder = path.join(__dirname, "../templates/pages")
@@ -107,6 +107,6 @@ app.get("*", (req, res) => {
 })
 
 // Creating A Server
-app.listen(3000, () => {
-   console.log("Server Is Started At Port 3000")
+app.listen(port, () => {
+   console.log(`Server Is Started At Port ${port}`)
 })
