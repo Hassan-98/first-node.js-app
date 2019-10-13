@@ -1,0 +1,47 @@
+﻿doctype html
+html
+   head
+      title= title
+      <!-- Encoding -->
+      meta(charset="utf-8")
+      <!-- Internet Explorer Compatiblity -->
+      meta(http-equiv="X-UA-Compatible" content="IE=edge")
+      <!-- Viewport Meta -->
+      meta(name="viewport" content="width=device-width, initial-scale=1")
+      <!-- Description Meta -->
+      meta(name="description" content="page description")
+      <!-- Keywords Meta -->
+      meta(name="keywords" content="hassan, ali")
+      <!-- Author Meta -->
+      meta(name="author" content="Hassan Ali")
+      <!-- Bootstrap Styles -->
+      link(rel="stylesheet" href="css/bootstrap.min.css")
+      <!-- Font Awesome -->
+      link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css")
+      <!-- Page Custom Styles -->
+      link(rel="stylesheet" href="css/home.css")
+      <!-- Page Icon -->
+      link(rel="shortcut icon" href="images/logo.jpg")
+
+   body
+      //- Header
+      include ../components/header
+      br
+
+      .title Hi From, #[b #{title}]
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Est porro, ratione eveniet voluptas facilis voluptatibus#[br] eaque libero ea vero quas quos a veritatis perferendis quis culpa quae cum excepturi doloremque.
+
+      br
+      //- Footer
+      include ../components/footer
+
+      <!-- JQuery Library v(3.3.1) -->
+      script(src="js/jquery-3.3.1.min.js")
+      <!-- Popper JS -->
+      script(src="js/popper.min.js")
+      <!-- Bootstrap JS v(4.2.1) -->
+      script(src="js/bootstrap.min.js")
+      <!-- Vue.js v(2.6.1) -->
+      script(src="js/vue.js")
+      <!-- Page Custom Scripts -->
+      script(src="js/custom.js")

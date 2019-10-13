@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Encoding -->
+        <meta charset="utf-8">
+        <!-- Internet Explorer Compatiblity -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Viewport Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Description Meta -->
+        <meta name="description" content="page description">
+        <!-- Keywords Meta -->
+        <meta name="keywords" content="hassan, ali">
+        <!-- Author Meta -->
+        <meta name="author" content="Hassan Ali">
+        <!-- Bootstrap Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Zilla+Slab&display=swap" rel="stylesheet">
+        <!-- Page Custom Styles -->
+        <link rel="stylesheet" href="css/home.css">
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="images/logo.jpg">
+        <!-- Page Title -->
+        <title>Page Title</title>
+    </head>
+    <body>
+        
+        {{>header}}
+        <h1>{{ title }}</h1>
+        <p>{{ err }}</p>
+        {{>footer}}
+
+        <!-- JQuery Library v(3.3.1) -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <!-- Popper JS -->
+        <script src="js/popper.min.js"></script>
+        <!-- Bootstrap JS v(4.2.1) -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Vue.js v(2.6.1) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+        <!-- Page Custom Scripts -->
+        <script src="js/custom.js"></script>
+        <!-- LIVE RELOAD -->
+        <script src="http://localhost:35729/livereload.js"></script>
+    </body>
+</html>

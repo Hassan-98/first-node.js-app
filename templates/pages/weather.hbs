@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Encoding -->
+        <meta charset="utf-8">
+        <!-- Internet Explorer Compatiblity -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <!-- Viewport Meta -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Description Meta -->
+        <meta name="description" content="page description">
+        <!-- Keywords Meta -->
+        <meta name="keywords" content="hassan, ali">
+        <!-- Author Meta -->
+        <meta name="author" content="Hassan Ali">
+        <!-- Bootstrap Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css?family=Permanent+Marker|Roboto|Zilla+Slab&display=swap" rel="stylesheet">
+        <!-- Page Custom Styles -->
+        <link rel="stylesheet" href="css/home.css">
+        <!-- Page Icon -->
+        <link rel="shortcut icon" href="images/logo.jpg">
+        <!-- Page Title -->
+        <title>Page Title</title>
+    </head>
+    <body>
+        {{> header}}
+        
+        <div class="container weather-app">
+            <label>Enter City</label>
+            <input type="text" placeholder="Enter City" class="citySearch"><button @click="search">Search</button>
+
+            <p v-if="noSearch" v-text="loading" class="loading"></p>
+
+            <p v-else-if="err" class="err" v-text="err"></p>
+
+            <div v-else class="weather-state">
+                <h3><i class="fas fa-globe-americas"></i> <b>City:</b> <i v-text="weather.city"></i></h3>
+                <h3><i class="fas fa-audio-description"></i> <b>Summary:</b> <i v-text="weather.summary"></i></h3>
+                <h3><i class="fas fa-temperature-low"></i> <b>Temperature:</b> <i v-text="weather.temperature + '°C'"></i></h3>
+                <h3><i class="fas fa-cloud-rain"></i> <b>Rain:</b> <i v-text="weather.precipProbability + '%'"></i></h3>
+            </div>
+
+        </div>
+
+        {{>footer}}      
+            
+
+        <!-- JQuery Library v(3.3.1) -->
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <!-- Popper JS -->
+        <script src="js/popper.min.js"></script>
+        <!-- Bootstrap JS v(4.2.1) -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Vue.js v(2.6.1) -->
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"></script>
+        <!-- Page Custom Scripts -->
+        <script src="js/custom.js"></script>
+    </body>
+</html>

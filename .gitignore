@@ -1,0 +1,7 @@
+﻿node_modules/
+assets/
+.vscode/
+notesAppWithArgv.js
+gulpfile.js
+# package.json
+# package-lock.json
