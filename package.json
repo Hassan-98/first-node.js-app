@@ -4,7 +4,8 @@
   "description": "Ready Web Template for Designing",
   "main": "index.js",
   "scripts": {
-    "start": "node server/app.js"
+    "start": "node server/app.js",
+    "dev": "nodemon server/app.js -e js,hbs"
   },
   "keywords": [
     "ready",
@@ -18,8 +19,6 @@
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^5.0.3",
     "gulp-notify": "^3.2.0",
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
@@ -27,10 +26,8 @@
   },
   "dependencies": {
     "express": "^4.17.1",
-    "gulp-livereload": "^4.0.1",
     "hbs": "^4.0.6",
-    "pug": "^2.0.4",
-    "request": "^2.88.0",
-    "static-server": "^2.2.1"
+    "mysql": "^2.17.1",
+    "request": "^2.88.0"
   }
 }

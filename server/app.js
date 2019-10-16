@@ -2,9 +2,10 @@
 const path = require("path")
 const express = require("express")
 const hbs = require("hbs")
-// Services
-const weatherApp = require("./weatherApp")
-const notesApp = require("./framework")
+const mysql = require("mysql")
+// Weather App Services
+const weatherApp = require("./WeatherAppService")
+
 // Firing Express
 const app = express()
 const port = process.env.PORT || 3000
@@ -21,6 +22,15 @@ app.set('views', viewsFolder)
 hbs.registerPartials(partialsFolder)
 // Setting The Static Folder
 app.use(express.static(publicFolder))
+
+// Connect To MySQL Database
+const connection = mysql.createConnection({
+   host: "sql7.freemysqlhosting.net",
+   user: "sql7308679",
+   password: "D8WxSyDBZb",
+   database: "sql7308679"
+});
+
 
 // The Home Page Route
 app.get("/", (req, res) => {
@@ -39,26 +49,29 @@ app.get("/notes", (req, res) => {
 // Notes App API
 app.get("/notes/api", (req, res) => {
    if(!req.query.type){
-      var allNotes = notesApp.get("notes/collection")
-      res.send(allNotes)
+      connection.query("SELECT * FROM notes", (err, result) => {
+         res.send(result)
+      })
    } else {
       var type = req.query.type
       if(type == "add") {
          let title = req.query.title
          let body = req.query.body
          if(title && body){
-            notesApp.push("notes/collection", { title, body })
-            var allNotes = notesApp.get("notes/collection")
-            res.send(allNotes)
+            connection.query(`INSERT INTO notes (title, body) VALUES ('${title}', '${body}')`)
+            connection.query("SELECT * FROM notes", (err, result) => {
+               res.send(result)
+            })
          } else {
             res.send({err: "Title Or Body is Missing"})
          }
       } else if (type == "remove"){
          let id = req.query.id
          if(id){
-            notesApp.remove(`notes/collection/${id}`)
-            var allNotes = notesApp.get("notes/collection")
-            res.send(allNotes)
+            connection.query(`DELETE FROM notes WHERE id = '${id}'`)
+            connection.query("SELECT * FROM notes", (err, result) => {
+               res.send(result)
+            })
          } else {
             res.send({err: "ID is Missing"})
          }
